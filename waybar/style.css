@@ -1,16 +1,19 @@
 * {
   /* General taskbar font, I like maple mono ^-^*/
-  font-family: Maple Mono;
-  border-radius: 8;
+  font-family: "Maple Mono", "JetBrainsMono Nerd Font Propo";
+  /*font-family: "JetBrainsMono Nerd Font";*/
+  border-radius: 8px;
   font-size: 14px;
   padding: 0px;
+  margin: 0;
   background: transparent;
+  min-height:0;
 }
 
 window#waybar {
   /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
-  background-image: linear-gradient(to bottom, #141216 100%);
-  border-radius: 14px;
+  background: transparent;
+  color: #8eb0cb;
   padding: 0px;
   border-style: none;
 }
@@ -20,15 +23,24 @@ window#waybar {
 #clock,
 #custom-applauncher,
 #tray,
-#workspaces,
 #pulseaudio {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-image: linear-gradient(to bottom, #060e2b, #060e2b 100%);
 
   margin: 6px;
   margin-right: 0px;
   padding: 4px 8px;
-  border-radius: 8px;
-  color: #d8cab8;
+  border-radius: 20px;
+  color: #8eb0cb;
+
+  border-style: none;
+  transition-duration: 120ms;
+}
+#workspaces{
+  margin: 6px;
+  margin-right: 0px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  color: #8eb0cb;
 
   border-style: none;
   transition-duration: 120ms;
@@ -40,13 +52,15 @@ window#waybar {
 }
 
 #clock {
-  padding-top:8px;
+  font-size: 16px;
+  padding-top:7px;
+  padding-bottom: 7px;
   margin-right: 6px;
 }
 
 #pulseaudio:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
+  background-image: linear-gradient(to bottom, #8eb0cb, #8eb0cb 100%);
+  color: #060e2b;
   transition-duration: 120ms;
 }
 
@@ -58,68 +72,75 @@ window#waybar {
   font-size: 20px;
 }
 #custom-applauncher:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
+  background-image: linear-gradient(to bottom, #8eb0cb, #8eb0cb 100%);
+  color: #060e2b;
   transition-duration: 120ms;
 }
 
 #tray menu {
-  background-color: #141216;
-  color: #d8cab8;
+  background-color: #060e2b;
+  color: #8eb0cb;
   padding: 4px;
 }
 #tray menu menuitem {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background-image: linear-gradient(to bottom, #060e2b, #060e2b 100%);
 
   margin: 3px;
-  color: #d8cab8;
+  color: #8eb0cb;
   border-radius: 4px;
   border-style: solid;
-  border-color: #27232b;
+  border-color: #060e2b;
 }
 #tray menu menuitem:hover {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-  color: #ac82e9;
+  background-image: linear-gradient(to bottom, #060e2b, #060e2b 100%);
+  color: #8eb0cb;
   font-weight: bold;
 }
 
 #workspaces button {
   transition-duration: 100ms;
-  all: initial;
-  min-width: 0;
   font-weight: bold;
-  color: #d8cab8;
-  margin-right: 0.2cm;
-  margin-left: 0.2cm;
+  color: #8eb0cb;
+  border-radius: 20px;
+  min-width: 25px;
+  min-height: 0px;
+  background: alpha(#383e55, 0.8);
+  font-size: 10px;
+  margin: 0px 4px;
+  border: 1px solid #8eb0cb;
 }
 
 #workspaces button:hover {
   transition-duration: 120ms;
-  color: #8f56e1;
+  color: #3c50af;
 }
 #workspaces button.focused {
-  color: #ac82e9;
+  color: #759db9;
   font-weight: bold;
 }
 #workspaces button.active {
-  color: #ac82e9;
+  transition-duration: 100ms;
+  min-width: 50px;
+  background: #bacedc;
+  color: #060e2b;
   font-weight: bold;
+  border: 1px solid #060e2b;
 }
 #workspaces button.urgent {
-  color: #fcb167;
+  color: #d8aab0;
 }
 
 #battery {
   padding-top:8px;
-  background-color: #222222;
-  color: #0059cd
+  background: #aabfd8;
+  color: #060e2b;
 }
 
 #battery.critical,
 #battery.urgent {
-  color: #fc4629;
+  background: #d8aab0;
 }
 
 #battery.warning{
-  color: #9645ff
+  color: #c3aad8;
 }
