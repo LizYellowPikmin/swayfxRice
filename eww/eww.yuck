@@ -1,0 +1,44 @@
+(defwindow example
+           :monitor 0
+           :geometry (geometry :x "100px"
+                               :y "100px"
+                               :anchor "top center")
+           :stacking "bg"
+           :reserve (struts :distance "0px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+    (button
+        :timeout 200
+        :onclick "kitty -e --app-id floating_window bash -c 'sl' &"
+        (image
+            :path "/home/liz/Pictures/wallpapers/earth.png"
+            :image-width 200
+            :image-height 200
+        )
+    )
+)
+(defwindow fast
+    :monitor 0
+    :geometry (geometry
+        :x "20px"
+        :y "-47px"
+        :anchor "bottom left"
+    )
+
+    :stacking "bg"
+    :reserve (struts
+        :distance "0px"
+        :side "bottom"
+    )
+    :windowtype "dock"
+    :wm-ignore true
+    (button
+        :timeout 200
+        :onclick "kitty -e --app-id floating_window bash -c 'fastfetch; read' &"
+        (image
+            :path "/home/liz/Pictures/wallpapers/tArch.png"
+            :image-width 25
+            :image-height 25
+        )
+    )
+)
